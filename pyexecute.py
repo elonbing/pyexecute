@@ -106,7 +106,7 @@ class Command(object):
         try:
             result = Command(self.command + other.command, dict(self.variables, **other.variables))
         except AttributeError:
-            result = Command(self.command +
+            result = self + Command(other)
 
         return result
 
